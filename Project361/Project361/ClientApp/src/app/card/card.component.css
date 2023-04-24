@@ -1,0 +1,221 @@
+
+div {
+  margin: 0px;
+  padding: 0px;
+  width: 100px;
+  height: 145px;
+  background-size: 100px 145px;
+}
+
+#hidden {
+    background-image: url(../../assets/playing_card_images/back.svg);
+}
+
+/* cards organized from lowest (Ace) to highest (King) in the order of Spades, Hearts, Clubs, and Diamonds*/
+.card1 {
+  background-image: url(../../assets/playing_card_images/ace_of_spades.svg);
+}
+
+.card2 {
+  background-image: url(../../assets/playing_card_images/2_of_spades.svg);
+}
+
+.card3 {
+  background-image: url(../../assets/playing_card_images/3_of_spades.svg);
+}
+
+.card4 {
+  background-image: url(../../assets/playing_card_images/4_of_spades.svg);
+}
+
+.card5 {
+  background-image: url(../../assets/playing_card_images/5_of_spades.svg);
+}
+
+.card6 {
+  background-image: url(../../assets/playing_card_images/6_of_spades.svg);
+}
+
+.card7 {
+  background-image: url(../../assets/playing_card_images/7_of_spades.svg);
+}
+
+.card8 {
+  background-image: url(../../assets/playing_card_images/8_of_spades.svg);
+}
+
+.card9 {
+  background-image: url(../../assets/playing_card_images/9_of_spades.svg);
+}
+
+.card10 {
+  background-image: url(../../assets/playing_card_images/10_of_spades.svg);
+}
+
+.card11 {
+  background-image: url(../../assets/playing_card_images/jack_of_spades.svg);
+}
+
+.card12 {
+  background-image: url(../../assets/playing_card_images/queen_of_spades.svg);
+}
+
+.card13 {
+  background-image: url(../../assets/playing_card_images/king_of_spades.svg);
+}
+
+.card14 {
+  background-image: url(../../assets/playing_card_images/ace_of_hearts.svg);
+}
+
+.card15 {
+  background-image: url(../../assets/playing_card_images/2_of_hearts.svg);
+}
+
+.card16 {
+  background-image: url(../../assets/playing_card_images/3_of_hearts.svg);
+}
+
+.card17 {
+  background-image: url(../../assets/playing_card_images/4_of_hearts.svg);
+}
+
+.card18 {
+  background-image: url(../../assets/playing_card_images/5_of_hearts.svg);
+}
+
+.card19 {
+  background-image: url(../../assets/playing_card_images/6_of_hearts.svg);
+}
+
+.card20 {
+  background-image: url(../../assets/playing_card_images/7_of_hearts.svg);
+}
+
+.card21 {
+  background-image: url(../../assets/playing_card_images/8_of_hearts.svg);
+}
+
+.card22 {
+  background-image: url(../../assets/playing_card_images/9_of_hearts.svg);
+}
+
+.card23 {
+  background-image: url(../../assets/playing_card_images/10_of_hearts.svg);
+}
+
+.card24 {
+  background-image: url(../../assets/playing_card_images/jack_of_hearts.svg);
+}
+
+.card25 {
+  background-image: url(../../assets/playing_card_images/queen_of_hearts.svg);
+}
+
+.card26 {
+  background-image: url(../../assets/playing_card_images/king_of_hearts.svg);
+}
+
+.card27 {
+  background-image: url(../../assets/playing_card_images/ace_of_clubs.svg);
+}
+
+.card28 {
+  background-image: url(../../assets/playing_card_images/2_of_clubs.svg);
+}
+
+.card29 {
+  background-image: url(../../assets/playing_card_images/3_of_clubs.svg);
+}
+
+.card30 {
+  background-image: url(../../assets/playing_card_images/4_of_clubs.svg);
+}
+
+.card31 {
+  background-image: url(../../assets/playing_card_images/5_of_clubs.svg);
+}
+
+.card32 {
+  background-image: url(../../assets/playing_card_images/6_of_clubs.svg);
+}
+
+.card33 {
+  background-image: url(../../assets/playing_card_images/7_of_clubs.svg);
+}
+
+.card34 {
+  background-image: url(../../assets/playing_card_images/8_of_clubs.svg);
+}
+
+.card35 {
+  background-image: url(../../assets/playing_card_images/9_of_clubs.svg);
+}
+
+.card36 {
+  background-image: url(../../assets/playing_card_images/10_of_clubs.svg);
+}
+
+.card37 {
+  background-image: url(../../assets/playing_card_images/jack_of_clubs.svg);
+}
+
+.card38 {
+  background-image: url(../../assets/playing_card_images/queen_of_clubs.svg);
+}
+
+.card39{
+  background-image: url(../../assets/playing_card_images/king_of_clubs.svg);
+}
+
+.card40 {
+  background-image: url(../../assets/playing_card_images/ace_of_diamonds.svg);
+}
+
+.card41 {
+  background-image: url(../../assets/playing_card_images/2_of_diamonds.svg);
+}
+
+.card42 {
+  background-image: url(../../assets/playing_card_images/3_of_diamonds.svg);
+}
+
+.card43 {
+  background-image: url(../../assets/playing_card_images/4_of_diamonds.svg);
+}
+
+.card44 {
+  background-image: url(../../assets/playing_card_images/5_of_diamonds.svg);
+}
+
+.card45 {
+  background-image: url(../../assets/playing_card_images/6_of_diamonds.svg);
+}
+
+.card46 {
+  background-image: url(../../assets/playing_card_images/7_of_diamonds.svg);
+}
+
+.card47 {
+  background-image: url(../../assets/playing_card_images/8_of_diamonds.svg);
+}
+
+.card48 {
+  background-image: url(../../assets/playing_card_images/9_of_diamonds.svg);
+}
+
+.card49 {
+  background-image: url(../../assets/playing_card_images/10_of_diamonds.svg);
+}
+
+.card50 {
+  background-image: url(../../assets/playing_card_images/jack_of_diamonds.svg);
+}
+
+.card51 {
+  background-image: url(../../assets/playing_card_images/queen_of_diamonds.svg);
+}
+
+.card52 {
+  background-image: url(../../assets/playing_card_images/king_of_diamonds.svg);
+}
