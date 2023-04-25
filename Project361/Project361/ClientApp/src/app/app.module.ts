@@ -13,6 +13,8 @@ import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { CardComponent } from './card/card.component';
+import { SolitaireComponent } from './solitaire/solitaire.component';
+import { ShufflePipe } from './shuffle.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CardComponent } from './card/card.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    CardComponent
+    CardComponent,
+    SolitaireComponent,
+    ShufflePipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
