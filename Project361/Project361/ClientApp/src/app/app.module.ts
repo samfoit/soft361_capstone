@@ -15,6 +15,7 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { CardComponent } from './card/card.component';
 import { SolitaireComponent } from './solitaire/solitaire.component';
 import { ShufflePipe } from './shuffle.pipe';
+import { appRoutingModule } from './app.routing';
 
 @NgModule({
   declarations: [
