@@ -15,7 +15,6 @@ import { AuthorizeInterceptor } from 'src/api-authorization/authorize.intercepto
 import { CardComponent } from './card/card.component';
 import { SolitaireComponent } from './solitaire/solitaire.component';
 import { ShufflePipe } from './shuffle.pipe';
-import { appRoutingModule } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -37,6 +36,7 @@ import { appRoutingModule } from './app.routing';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
+      { path: 'solitaire', component: SolitaireComponent }
     ])
   ],
   providers: [
