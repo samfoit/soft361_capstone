@@ -1,37 +1,59 @@
 <div id="game">
-    <div class="row1" *ngIf="deck.length>0">
-        {{shuffle()}}
-        <app-card *ngFor="let test of deck; let i = index;"
-                  [classNum]="deck[i].id" [id]="deck[i].visible ? 'visible' : 'hidden'"></app-card>
+    <div class="top">
+        <div class="deck-piles">
+            <button id="deck"></button>
+            <div id="deck-cards"></div>
+        </div>
+        <div class="stacks">
+            <div id="spades-stack">
+                <p>♠</p>
+            </div>
+            <div id="hearts-stack">
+                <p>♥</p>
+            </div>
+            <div id="diamonds-stack">
+                <p>♦</p>
+            </div>
+            <div id="spades-stack">
+                <p>♣</p>
+            </div>
+        </div>
     </div>
-    <div class="row2" *ngIf="deck.length>0">
-        {{shuffle()}}
-        <app-card *ngFor="let test of deck; let i = index;"
-                  [classNum]="deck[i].id" [id]="deck[i].visible ? 'visible' : 'hidden'"></app-card>
-    </div>
-    <div class="row3" *ngIf="deck.length>0">
-        {{shuffle()}}
-        <app-card *ngFor="let test of deck; let i = index;"
-                  [classNum]="deck[i].id" [id]="deck[i].visible ? 'visible' : 'hidden'"></app-card>
-    </div>
-    <div class="row4" *ngIf="deck.length>0">
-        {{shuffle()}}
-        <app-card *ngFor="let test of deck; let i = index;"
-                  [classNum]="deck[i].id" [id]="deck[i].visible ? 'visible' : 'hidden'"></app-card>
-    </div>
-    <div class="row5" *ngIf="deck.length>0">
-        {{shuffle()}}
-        <app-card *ngFor="let test of deck; let i = index;"
-                  [classNum]="deck[i].id" [id]="deck[i].visible ? 'visible' : 'hidden'"></app-card>
-    </div>
-    <div class="row6" *ngIf="deck.length>0">
-        {{shuffle()}}
-        <app-card *ngFor="let test of deck; let i = index;"
-                  [classNum]="deck[i].id" [id]="deck[i].visible ? 'visible' : 'hidden'"></app-card>
-    </div>
-    <div class="row7" *ngIf="deck.length>0">
-        {{shuffle()}}
-        <app-card *ngFor="let test of deck; let i = index;"
-                  [classNum]="deck[i].id" [id]="deck[i].visible ? 'visible' : 'hidden'"></app-card>
+    <div #rows class="bottom">
+        <div #row1 id="row1" class="card-container">
+            <app-card *ngFor="let card of cardRows[0]"
+                      [classNum]="card.id" [id]="'visible'">
+            </app-card>
+        </div>
+        <div id="row2" class="card-container">
+            <app-card *ngFor ="let card of cardRows[1]"
+                      [classNum]="card.id" [id]="'visible'">
+            </app-card>
+        </div>
+        <div id="row3" class="card-container">
+            <app-card *ngFor="let card of cardRows[2]"
+                      [classNum]="card.id" [id]="'visible'">
+            </app-card>
+        </div>
+        <div id="row4" class="card-container">
+            <app-card *ngFor="let card of cardRows[3]"
+                      [classNum]="card.id" [id]="'visible'">
+            </app-card>
+        </div>
+        <div id="row5" class="card-container">
+            <app-card *ngFor="let card of cardRows[4]"
+                      [classNum]="card.id" [id]="'visible'">
+            </app-card>
+        </div>
+        <div id="row6" class="card-container">
+            <app-card *ngFor="let card of cardRows[5]"
+                      [classNum]="card.id" [id]="'visible'">
+            </app-card>
+        </div>
+        <div id="row7" class="card-container">
+            <app-card *ngFor="let card of cardRows[6]"
+                      [classNum]="card.id" [id]="'visible'">
+            </app-card>
+        </div>
     </div>
 </div>

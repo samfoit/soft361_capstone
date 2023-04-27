@@ -14,7 +14,6 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { CardComponent } from './card/card.component';
 import { SolitaireComponent } from './solitaire/solitaire.component';
-import { ShufflePipe } from './shuffle.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { ShufflePipe } from './shuffle.pipe';
     FetchDataComponent,
     CardComponent,
     SolitaireComponent,
-    ShufflePipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

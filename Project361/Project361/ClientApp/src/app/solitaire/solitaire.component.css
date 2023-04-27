@@ -1,8 +1,74 @@
 #game {
     display: flex;
+    flex-direction: column;
+    gap: 150px;
+    background-image: url(../../assets/poker-table.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
 }
 
-.container {
-    margin: 0;
-    padding: 0;
+.top {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 20px;
+}
+
+.deck-piles {
+  display: flex;
+  gap: 100px;
+}
+
+#deck {
+    width: 100px;
+    height: 145px;
+    background-image: url(../../assets/playing_card_images/back.svg);
+    background-size: cover;
+    outline: none;
+}
+
+.stacks {
+    display: flex;
+    gap: 20px;
+}
+
+.stacks div {
+    width: 100px;
+    height: 145px;
+    outline: solid 3px #f5f5dc6b;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 40px;
+    color: #f5f5dc6b;
+}
+
+p {
+    padding-top: 40%;
+}
+
+[id*="stack"] {
+    display: grid;
+}
+
+[id*="stack"] * {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.bottom {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.card-container {
+    width: 100px;
+    height: 145px;
+    outline: solid 3px #f5f5dc6b;
+    border-radius: 8px;
+}
+
+[id*="row"] {
+    position: relative;
 }
