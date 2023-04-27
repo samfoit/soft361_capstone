@@ -8,16 +8,12 @@
 /// </summary>
 public class multiplayerGameLogic
 {
-	private Person players[];
-	private Card deck[];
-	public multiplayerGameLogic(Person players[], Card deck[])
-	{
-		this.players = players;
-		this.deck = deck;
-	}
-	
 	/*
-	 * Starts the game by taking in an array of players and the card deck
+	 * Starts the game by taking in an array of players and the card deck. This will set up
+	 * everything for the game such as setting each players score to 0.
+	 * <parameter>Player array in turn order</parameter>
+	 * <parameter>Card array (deck)</parameter>
+	 * <return>Updated player array</return>
 	 */
 	void startGame(Player players[], Card deck[])
 	{
@@ -25,7 +21,12 @@ public class multiplayerGameLogic
 	}
 
     /*
-	 * Starts a round by taking in an array of players and the card deck
+	 * Starts a round by taking in an array of players and the card deck. 
+	 * The round will filp a card and then determine who has the highest card
+	 * and gets awarded the point
+	 * <parameter>Array of player in the turn order</parameter>
+	 * <parameter>Card array</parameter>
+	 * <return>Updated player array</return>
 	 */
     void startRound(Player players[], Card deck[])
     {
@@ -33,7 +34,12 @@ public class multiplayerGameLogic
     }
 
     /*
-	 * Ends the game by taking in an array of players and the card deck
+	 * Ends the game by taking in an array of players and the card deck. 
+	 * This function will determine who has won.
+	 * <parameter>Player array in turn order</parameter>
+	 * <parameter>Card array (deck)</parameter>
+	 * <return>An array of all the winning players (should only be one
+	 * unless there is a tie.</return>
 	 */
     void endGame(Player players[], Card deck[])
     {

@@ -6,6 +6,7 @@ public class DeckFunctions //TODO: Unit Testing
     * The createDeck function will create an array of 52 cards.
     * The deck that is returned from this function is unshuffled.
     * Each Cards isFlipped is automatically set to 0.
+    * <return>An array of cards</return>
     */
     public Card[] createDeck()
     {
@@ -35,6 +36,8 @@ public class DeckFunctions //TODO: Unit Testing
 
     /*
 	 * This function will shuffle the given deck and return the shuffled deck.
+	 * <parameter>Array of card (deck)</parameter>
+	 * <return>Shuffled array of cards</return>
 	 */
     public Card[] shuffleDeck(Card[] deck)
     {
