@@ -9,7 +9,6 @@
 ///    -Diamonds = 1
 ///    -Spades = 2
 ///    -Clubs = 3
-/// -cardName which holds a string of the exact card name (for example "5 of diamonds")
 /// -isFlipped which holds either true or false for if the card is flipped or not
 /// </summary>
 public class Card
@@ -17,21 +16,47 @@ public class Card
 	private int cardId;
 	private int cardValue;
 	private int cardSuite;
-	private string cardName;
 	private bool isFlipped;
-	public Card(int cardId, int cardValue, int cardSuite, string cardName, bool isFlipped)
+
+    enum suite
+    {
+        HEARTS,
+        DIAMONDS,
+        SPADES,
+        CLUBS
+    };
+
+	public Card(int cardId, int cardValue, int cardSuite,  bool isFlipped)
 	{
 		this.CardId = cardId;
 		this.CardValue = cardValue;
 		this.CardSuite = cardSuite;
-		this.CardName = cardName;
 		this.IsFlipped = isFlipped;
 	}
 
     public global::System.Int32 CardId { get => cardId; set => cardId = value; }
     public global::System.Int32 CardValue { get => cardValue; set => cardValue = value; }
     public global::System.Int32 CardSuite { get => cardSuite; set => cardSuite = value; }
-    public global::System.String CardName { get => cardName; set => cardName = value; }
     public global::System.Boolean IsFlipped { get => isFlipped; set => isFlipped = value; }
+
+    /// <summary>
+    /// Converts card into a string
+    /// </summary>
+    /// <returns>Card name as a string</returns>
+	public string toString()
+	{
+        string suite;
+        if (this.cardSuite == HEARTS) suite = "Hearts";
+        else if (this.cardSuite == DIAMONDS) suite = "Diamonds";
+        else if (this.cardSuite == SPADES) suite = "Spades";
+        else suite = "Clubs";
+        string value;
+        if (this.cardValue == 1) value = "Ace";
+        else if (this.cardValue == 11) value = "Jack";
+        else if (this.cardValue == 12) value = "Queen";
+        else if (this.cardValue == 13) value = "King";
+        else value = string.Format("{0}", this.cardValue); //string.Format https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=net-8.0#Starting
+        return string.Format("{0} of {1}", value, suite);
+    }
 
 }

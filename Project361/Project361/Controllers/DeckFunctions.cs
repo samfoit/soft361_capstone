@@ -14,21 +14,10 @@ public class DeckFunctions //TODO: Unit Testing
         int currentCard = 0;
         for(int i = 0; i < 4; i++)
         {
-            string suite;
-            if (i == 0) suite = "Hearts";
-            else if (i == 1) suite = "Diamonds";
-            else if (i == 2) suite = "Spades";
-            else suite = "Clubs";
             for(int j = 1; j <= 13; j++)
             {
-                string value;
-                if (j == 1) value = "Ace";
-                else if (j == 11) value = "Jack";
-                else if (j == 12) value = "Queen";
-                else if (j == 13) value = "King";
-                else value = string.Format("{0}", j); //string.Format https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=net-8.0#Starting
-                string name = string.Format("{0} of {1}", value, suite);
-                Card[currentCard] = new Card(currentCard, j, i, name, 0);
+                currentCard++;
+                Card[currentCard] = new Card(currentCard, j, i, 0);
             }
         }
         return deck;
