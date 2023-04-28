@@ -8,7 +8,7 @@ public class DeckFunctions //TODO: Unit Testing
     * Each Cards isFlipped is automatically set to 0.
     * <return>An array of cards</return>
     */
-    public Card[] createDeck()
+    public static Card[] createDeck()
     {
         Card[] deck = new Card[52];
         int currentCard = 0;
@@ -39,7 +39,7 @@ public class DeckFunctions //TODO: Unit Testing
 	 * <parameter>Array of card (deck)</parameter>
 	 * <return>Shuffled array of cards</return>
 	 */
-    public Card[] shuffleDeck(Card[] deck)
+    public static Card[] shuffleDeck(Card[] deck)
     {
         Random randomNumber = new Random(); //Random https://www.tutorialsteacher.com/articles/generate-random-numbers-in-csharp
         for (int i = 0; i < 52; i++)
