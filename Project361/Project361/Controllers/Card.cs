@@ -46,9 +46,9 @@ public class Card
 	public string toString()
 	{
         string suite;
-        if (this.cardSuite == HEARTS) suite = "Hearts";
-        else if (this.cardSuite == DIAMONDS) suite = "Diamonds";
-        else if (this.cardSuite == SPADES) suite = "Spades";
+        if (this.cardSuite == suite.HEARTS) suite = "Hearts";
+        else if (this.cardSuite == suite.DIAMONDS) suite = "Diamonds";
+        else if (this.cardSuite == suite.SPADES) suite = "Spades";
         else suite = "Clubs";
         string value;
         if (this.cardValue == 1) value = "Ace";
