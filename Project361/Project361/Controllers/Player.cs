@@ -1,19 +1,19 @@
 ﻿using System;
 
 /// <summary>
-/// Person class has 4 variables:
+/// Player class has 4 variables:
 /// -playerId which is a unique value for each player
 /// -nickname which is the nickname that the user enters in
 /// -score which is the players current score
 /// -currentCardHeld which is the card that the person is currently holding
 /// </summary>
-public class Person
+public class Player
 {
 	private int playerId;
 	private string nickname;
 	private int score;
 	Card currentCardHeld;
-	public Person(int playerId, string nickname, int score, Card currentCardHeld)
+	public Player(int playerId, string nickname, int score, Card currentCardHeld)
 	{
 		this.playerId = playerId;
 		this.nickname = nickname;

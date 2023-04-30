@@ -15,7 +15,7 @@ public class multiplayerGameLogic
 	 * <parameter>Card array (deck)</parameter>
 	 * <return>Updated player array</return>
 	 */
-	void startGame(Player players[], Card deck[])
+	Player[] startGame(Player players[], Card deck[])
 	{
 		//TODO: write function
 	}
@@ -28,7 +28,7 @@ public class multiplayerGameLogic
 	 * <parameter>Card array</parameter>
 	 * <return>Updated player array</return>
 	 */
-    void startRound(Player players[], Card deck[])
+    Player[] startRound(Player players[], Card deck[])
     {
         //TODO: write function
     }
@@ -41,7 +41,7 @@ public class multiplayerGameLogic
 	 * <return>An array of all the winning players (should only be one
 	 * unless there is a tie.</return>
 	 */
-    void endGame(Player players[], Card deck[])
+    Player[] endGame(Player players[], Card deck[])
     {
         //TODO: write function
     }
