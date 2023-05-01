@@ -17,7 +17,7 @@ public class DeckFunctions //TODO: Unit Testing
             for(int j = 1; j <= 13; j++)
             {
                 currentCard++;
-                Card[currentCard] = new Card(currentCard, j, i, 0);
+                deck[currentCard] = new Card(currentCard, j, i, 0);
             }
         }
         return deck;
