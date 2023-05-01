@@ -1,0 +1,6 @@
+C:\Users\byrda\soft361_capstone\Project361\MSTest\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\byrda\soft361_capstone\Project361\MSTest\obj\Debug\net6.0\MSTest.csproj.AssemblyReference.cache
+C:\Users\byrda\soft361_capstone\Project361\MSTest\obj\Debug\net6.0\MSTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\byrda\soft361_capstone\Project361\MSTest\obj\Debug\net6.0\MSTest.AssemblyInfoInputs.cache
+C:\Users\byrda\soft361_capstone\Project361\MSTest\obj\Debug\net6.0\MSTest.AssemblyInfo.cs
+C:\Users\byrda\soft361_capstone\Project361\MSTest\obj\Debug\net6.0\MSTest.csproj.CoreCompileInputs.cache
