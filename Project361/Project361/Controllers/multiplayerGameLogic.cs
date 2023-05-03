@@ -20,7 +20,7 @@ public class multiplayerGameLogic
 		//TODO: write function
 	}
 
-    /*
+	/*
 	 * Starts a round by taking in an array of players and the card deck. 
 	 * The round will filp a card and then determine who has the highest card
 	 * and gets awarded the point
@@ -28,9 +28,41 @@ public class multiplayerGameLogic
 	 * <parameter>Card array</parameter>
 	 * <return>Updated player array</return>
 	 */
-    Player[] startRound(Player players[], Card deck[])
-    {
-        //TODO: write function
+	[HttpGet]
+	Player[] startRound(Player players[])
+	{
+		var DeckFunctions = new DeckFunctions();
+		Card[] deck = DeckFunctions.createDeck(); //this may be replaced with a database call if we decide to store the deck there{
+		deck = DeckFunctions.shuffleDeck();
+		//assign each player a card
+		for (int i = 0; i < players.Length; i++)
+		{
+			players[i].CurrentCardHeld = Card[i];
+		}
+		//find highest card
+		int[] playersWithHighestCard;
+		int arrayLength = 0;
+		int highestValue = 0;
+		for (int i = 0; i < players.Length; i++)
+		{
+			if(players.CurrentCardHeld.Value > highestValue)
+			{
+                playersWithHighestCard[0] = i;
+				arrayLength = 1;
+				highestValue = players.CurrentCardHeld.Value;
+			} else if(players.CurrentCardHeld.Value == highestValue)
+			{
+                playersWithHighestCard[arrayLength] = i;
+				arrayLength++;
+            }
+		}
+		//Update score
+		for(int i = 0; i < arrayLength; i++)
+		{
+			players[playersWithHighestCard[i]].score++;
+		}
+		return players;
+		
     }
 
     /*
