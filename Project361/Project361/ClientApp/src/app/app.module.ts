@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -14,6 +14,8 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { CardComponent } from './card/card.component';
 import { SolitaireComponent } from './solitaire/solitaire.component';
+import { MultiplayerComponent } from './multiplayer/multiplayer.component';
+import { WarGameComponent } from './war-game/war-game.component';
 
 @NgModule({
   declarations: [
@@ -24,17 +26,22 @@ import { SolitaireComponent } from './solitaire/solitaire.component';
     FetchDataComponent,
     CardComponent,
     SolitaireComponent,
+    MultiplayerComponent,
+    WarGameComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     ApiAuthorizationModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-      { path: 'solitaire', component: SolitaireComponent }
+      { path: 'solitaire', component: SolitaireComponent },
+      { path: 'multiplayer', component: MultiplayerComponent },
+      { path: 'war', component: WarGameComponent}
     ])
   ],
   providers: [
