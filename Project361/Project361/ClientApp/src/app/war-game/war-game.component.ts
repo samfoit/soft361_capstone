@@ -11,5 +11,7 @@ export class WarGameComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onPlayButtonClicked() {
+    alert("You clicked the play button");
+  }
 }

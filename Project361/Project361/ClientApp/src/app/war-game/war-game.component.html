@@ -1,1 +1,35 @@
-<p>war-game works!</p>
+<div id="page">
+    <div class="cards-container">
+        <div class="player-container">
+            <div class="player-info">
+                <div class="score">0</div>
+                <div class="name">Sam</div>
+            </div>
+            <app-card [classNum]="1" [id]="'hidden'"></app-card>
+        </div>
+        <div class="player-container">
+            <div class="player-info">
+                <div class="score">0</div>
+                <div class="name">Aden</div>
+            </div>
+            <app-card [classNum]="1" [id]="'hidden'"></app-card>
+        </div>
+        <div class="player-container">
+            <div class="player-info">
+                <div class="score">0</div>
+                <div class="name">Pranav</div>
+            </div>
+            <app-card [classNum]="1" [id]="'hidden'"></app-card>
+        </div>
+        <div class="player-container">
+            <div class="player-info">
+                <div class="score">0</div>
+                <div class="name">Chris</div>
+            </div>
+            <app-card [classNum]="1" [id]="'hidden'"></app-card>
+        </div>
+    </div>
+    <div>
+        <button type="button" (click)="onPlayButtonClicked()"class="btn btn-warning btn-lg">Play</button>
+    </div>
+</div>
