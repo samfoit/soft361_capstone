@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-multiplayer',
@@ -12,7 +13,7 @@ export class MultiplayerComponent implements OnInit {
   });
   players?: number;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -24,7 +25,7 @@ export class MultiplayerComponent implements OnInit {
     this.multiplayerForm = new FormGroup({
       players: new FormArray([
         new FormGroup({
-          username: new FormControl("")
+          username: new FormControl("", [Validators.required, Validators.minLength(1)])
         })
       ])
     });
@@ -36,7 +37,7 @@ export class MultiplayerComponent implements OnInit {
     if (this.players < 8) {
       this.players++;
       control.push(new FormGroup({
-        username: new FormControl(""),
+        username: new FormControl("", [Validators.required, Validators.minLength(1)]),
       }));
     }
   }
@@ -47,6 +48,16 @@ export class MultiplayerComponent implements OnInit {
       control.removeAt(control.length - 1);
 
       this.players--;
+    }
+  }
+
+  onSubmit() {
+    if (this.multiplayerForm.valid) {
+      console.log(this.multiplayerForm.value);
+      this.multiplayerForm.reset();
+      this.router.navigate(['/war']);
+    } else {
+      alert("Input not valid.\nAre you missing a name?");
     }
   }
 

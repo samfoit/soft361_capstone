@@ -51,3 +51,11 @@ input {
     padding-right: 15px;
 }
 
+button {
+    position: absolute;
+    right: 47%;
+    top: 80%;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
