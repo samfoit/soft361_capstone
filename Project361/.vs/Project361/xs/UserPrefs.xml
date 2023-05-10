@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{9481DFF9-1E0D-4AC7-A04B-A0E6A89DDA02}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Project361 PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Project361/Controllers/multiplayerGameLogic.cs">
+    <Files>
+      <File FileName="Project361/Controllers/multiplayerGameLogic.cs" Line="18" Column="37" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Project361" expanded="True">
+            <Node name="Project361" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="Card.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

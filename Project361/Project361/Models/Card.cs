@@ -1,22 +1,11 @@
 ﻿using System;
 
-/// <summary>
-/// Card class which has 4 variables:
-/// -cardId which holds a value (up to 52) for each card
-/// -cardValue which holds the value of the card (for example ace is 1 and king is 13
-/// -cardSuite which holds a number for the suite:
-///    -Hearts = 0
-///    -Diamonds = 1
-///    -Spades = 2
-///    -Clubs = 3
-/// -isFlipped which holds either true or false for if the card is flipped or not
-/// </summary>
 public class Card
 {
-	private int cardId;
-	private int cardValue;
-	private int cardSuite;
-	private bool isFlipped;
+    private int _CardId;
+    private int _CardValue;
+    private int _CardSuite;
+    private bool _IsFlipped;
 
     enum suite
     {
@@ -26,37 +15,53 @@ public class Card
         CLUBS
     };
 
-	public Card(int cardId, int cardValue, int cardSuite,  bool isFlipped)
-	{
-		this.CardId = cardId;
-		this.CardValue = cardValue;
-		this.CardSuite = cardSuite;
-		this.IsFlipped = isFlipped;
-	}
-
-    public global::System.Int32 CardId { get => cardId; set => cardId = value; }
-    public global::System.Int32 CardValue { get => cardValue; set => cardValue = value; }
-    public global::System.Int32 CardSuite { get => cardSuite; set => cardSuite = value; }
-    public global::System.Boolean IsFlipped { get => isFlipped; set => isFlipped = value; }
-
-    /// <summary>
-    /// Converts card into a string
-    /// </summary>
-    /// <returns>Card name as a string</returns>
-	public string toString()
-	{
-        string suite;
-        if (this.cardSuite == suite.HEARTS) suite = "Hearts";
-        else if (this.cardSuite == suite.DIAMONDS) suite = "Diamonds";
-        else if (this.cardSuite == suite.SPADES) suite = "Spades";
-        else suite = "Clubs";
-        string value;
-        if (this.cardValue == 1) value = "Ace";
-        else if (this.cardValue == 11) value = "Jack";
-        else if (this.cardValue == 12) value = "Queen";
-        else if (this.cardValue == 13) value = "King";
-        else value = string.Format("{0}", this.cardValue); //string.Format https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=net-8.0#Starting
-        return string.Format("{0} of {1}", value, suite);
+    public Card(int CardId, int CardValue, int CardSuite, bool IsFlipped)
+    {
+        this._CardId = CardId;
+        this._CardValue = CardValue;
+        this._CardSuite = CardSuite;
+        this._IsFlipped = IsFlipped;
     }
 
+    public int CardId
+    {
+        get => _CardId;
+        set => _CardId = value;
+    }
+    public int CardValue
+    {
+        get => _CardValue;
+        set => _CardValue = value;
+    }
+    public int CardSuite
+    {
+        get => _CardSuite;
+        set => _CardSuite = value;
+    }
+    public bool IsFlipped
+    {
+        get => _IsFlipped;
+        set => _IsFlipped = value;
+    }
+
+    public string toString()
+    {
+        string suite_str;
+        if (this._CardSuite != (int)suite.HEARTS)
+        {
+            if (this._CardSuite == (int)suite.DIAMONDS) suite_str = "Diamonds";
+            else if (this._CardSuite == (int)suite.SPADES) suite_str = "Spades";
+            else suite_str = "Clubs";
+        }
+        else suite_str = "Hearts";
+
+        string value;
+        if (this._CardValue == 1) value = "Ace";
+        else if (this._CardValue == 11) value = "Jack";
+        else if (this._CardValue == 12) value = "Queen";
+        else if (this._CardValue == 13) value = "King";
+        else value = this._CardValue.ToString();
+
+        return string.Format("{0} of {1}", value, suite_str);
+    }
 }
