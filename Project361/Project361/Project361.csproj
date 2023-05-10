@@ -8,6 +8,7 @@
     <SpaProxyServerUrl>https://localhost:44473</SpaProxyServerUrl>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>491de148-52a7-411e-9694-6734dae13e85</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,8 +33,17 @@
     <Content Remove="$(SpaRoot)**" />
     <None Remove="$(SpaRoot)**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+    <None Remove="ClientApp\src\app\models\" />
+    <None Remove="ClientApp\src\app\services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\models\" />
+    <Folder Include="ClientApp\src\app\services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\OidcConfigurationController.cs" />
+  </ItemGroup>
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
