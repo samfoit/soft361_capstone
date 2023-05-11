@@ -9,15 +9,26 @@ import { SharedService } from '../services/shared.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public cardData: Card[];
+  public cardData;
 
-  constructor(private httpClient: HttpClient, public service: SharedService) {}
+  constructor(public service: SharedService) {}
 
   ngOnInit(): void {
-    this.httpClient.get<Card[]>('https://localhost:7297/api/cards')
+    this.getDeck();
+  }
+
+  getDeck() {
+    this.service.getDeck()
       .subscribe(response => {
-        this.cardData = response;
-        console.log(this.cardData);
-      })
+        this.setCardData(response);
+      });
+  }
+
+  setCardData(data: any) {
+    this.cardData = data;
+  }
+
+  createSolitaireGame() {
+    
   }
 }

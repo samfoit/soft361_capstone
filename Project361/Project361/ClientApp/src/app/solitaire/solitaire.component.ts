@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Card } from '../card';
 import { Deck } from '../deck';
+import { Card } from '../models/card.model';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-solitaire',
@@ -8,37 +9,44 @@ import { Deck } from '../deck';
   styleUrls: ['./solitaire.component.css']
 })
 export class SolitaireComponent implements OnInit {
-  public playingCards: Deck = new Deck();
-
-  public deck: Card[] = this.playingCards.cards;
+  public deck: Card[];
   public cardRows: Card[][] = [];
   @ViewChild('rows') rowHolder!: ElementRef;
   
-  constructor(private renderer: Renderer2) {
+  constructor(public service: SharedService) {
   }
 
   ngOnInit(): void {
+    this.getDeck();
+  }
+
+  // gets the deck from the database
+  getDeck() {
+    this.service.getDeck()
+      .subscribe(response => {
+        this.manageDeck(response);
+      });
+  }
+
+  // handles the deck once it's pulled from the db
+  manageDeck(data: any) {
+    this.deck = data;
+    console.log(this.deck.length);
     this.shuffle();
     this.dealCards();
   }
 
-  ngAfterViewInit(): void {
-    this.renderRows();
-  }
-
-  shuffle() {
-    this.deck = this.playingCards.shuffle();
-  }
-
-  // arbitrary function that returns an array of cards and deletes them from the top
+  // transfers the cards from the deck to the cardRows
   dealCards() {
-    // create an array of cards for each row pulling from deck then push it to cardRows
     let cardsDealt: number = 0;
 
     for (let i = 1; i < 8; i++) {
       let stack: Card[] = [];
       for (let j = 0; j < i; j++) {
         let index = this.deck.length - 1 - cardsDealt;
+        if ((i - 1) == j) {
+          this.deck[index].visible = true;
+        }
         stack.push(this.deck[index]);
         cardsDealt++;
       }
@@ -49,18 +57,16 @@ export class SolitaireComponent implements OnInit {
     for (let i = 0; i < 28; i++) {
       this.deck.pop();
     }
-
-    console.log(this.cardRows);
   }
 
-  renderRows() {
-    for (const row of this.rowHolder.nativeElement.children) {
-      let cards: HTMLCollection = row.children;
+  // randomizes the deck
+  shuffle() {
+    for (let i = 0; i < this.deck.length; i++) {
+      let j = Math.floor(Math.random() * (this.deck.length));
 
-      for (let i = 0; i < cards.length; i++) {
-        this.renderer.setStyle(cards[i], 'position', 'absolute');
-        this.renderer.setStyle(cards[i], 'top', 25 * i + 'px');
-      }
+      [this.deck[i], this.deck[j]] = [this.deck[j], this.deck[i]];
     }
+
+    return this.deck;
   }
 }

@@ -24,7 +24,8 @@ public class CardsContext : DbContext
             {
                 Id = i,
                 Rank = GetCardRank(i),
-                Suite = GetCardSuite(i)
+                Suite = GetCardSuite(i),
+                Visible = false
             };
         }
 

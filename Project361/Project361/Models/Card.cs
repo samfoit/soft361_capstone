@@ -8,5 +8,7 @@ public class Card
 	public int Rank { get; set; }
 
 	public string? Suite { get; set; }
+
+	public bool Visible { get; set; }
 }
 

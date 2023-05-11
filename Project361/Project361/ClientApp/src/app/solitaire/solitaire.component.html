@@ -21,38 +21,52 @@
     </div>
     <div #rows class="bottom">
         <div #row1 id="row1" class="card-container">
-            <app-card *ngFor="let card of cardRows[0]"
-                      [classNum]="card.id" [id]="'visible'">
+            <app-card *ngFor="let card of cardRows[0]; let i = index"
+                      [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
+                      [style.position]="'absolute'"
+                      [style.top]="25 * i + 'px'">
             </app-card>
         </div>
         <div id="row2" class="card-container">
-            <app-card *ngFor ="let card of cardRows[1]"
-                      [classNum]="card.id" [id]="'visible'">
+            <app-card *ngFor ="let card of cardRows[1]; let i = index"
+                      [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
+                      [style.position]="'absolute'"
+                      [style.top]="25 * i + 'px'">
             </app-card>
         </div>
         <div id="row3" class="card-container">
-            <app-card *ngFor="let card of cardRows[2]"
-                      [classNum]="card.id" [id]="'visible'">
+            <app-card *ngFor="let card of cardRows[2]; let i = index"
+                      [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
+                      [style.position]="'absolute'"
+                      [style.top]="25 * i + 'px'">
             </app-card>
         </div>
         <div id="row4" class="card-container">
-            <app-card *ngFor="let card of cardRows[3]"
-                      [classNum]="card.id" [id]="'visible'">
+            <app-card *ngFor="let card of cardRows[3]; let i = index"
+                      [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
+                      [style.position]="'absolute'"
+                      [style.top]="25 * i + 'px'">
             </app-card>
         </div>
         <div id="row5" class="card-container">
-            <app-card *ngFor="let card of cardRows[4]"
-                      [classNum]="card.id" [id]="'visible'">
+            <app-card *ngFor="let card of cardRows[4]; let i = index"
+                      [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
+                      [style.position]="'absolute'"
+                      [style.top]="25 * i + 'px'">
             </app-card>
         </div>
         <div id="row6" class="card-container">
-            <app-card *ngFor="let card of cardRows[5]"
-                      [classNum]="card.id" [id]="'visible'">
+            <app-card *ngFor="let card of cardRows[5]; let i = index"
+                      [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
+                      [style.position]="'absolute'"
+                      [style.top]="25 * i + 'px'">
             </app-card>
         </div>
         <div id="row7" class="card-container">
-            <app-card *ngFor="let card of cardRows[6]"
-                      [classNum]="card.id" [id]="'visible'">
+            <app-card *ngFor="let card of cardRows[6]; let i = index"
+                      [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
+                      [style.position]="'absolute'"
+                      [style.top]="25 * i + 'px'">
             </app-card>
         </div>
     </div>

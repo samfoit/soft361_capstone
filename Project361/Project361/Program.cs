@@ -11,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<CardsContext>(dbContextOptionsBuilder =>
     dbContextOptionsBuilder.UseSqlite(builder.Configuration["ConnectionStrings:DefaultConnection"]));
+builder.Services.AddDbContext<SolitaireContext>(dbContextOptionsBuilder =>
+    dbContextOptionsBuilder.UseSqlite(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
