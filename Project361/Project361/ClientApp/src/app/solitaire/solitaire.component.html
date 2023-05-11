@@ -1,21 +1,38 @@
 <div id="game">
     <div class="top">
         <div class="deck-piles">
-            <button id="deck"></button>
-            <div id="deck-cards"></div>
+            <button id="deck" (click)="draw()"></button>
+            <div id="deck-cards">
+                <app-card *ngFor="let card of drawPile; let i = index"
+                          [classNum]="card.id" [id]="i == (drawPile.length - 1) ? 'visible' : 'hidden'"
+                          (click)="placeCard(card, -1)">
+                </app-card>
+            </div>
         </div>
         <div class="stacks">
             <div id="spades-stack">
                 <p>♠</p>
+                <app-card *ngFor="let card of suiteStack[0]"
+                          [classNum]="card.id" [id]="'visible'">
+                </app-card>
             </div>
             <div id="hearts-stack">
                 <p>♥</p>
+                <app-card *ngFor="let card of suiteStack[1]"
+                          [classNum]="card.id" [id]="'visible'">
+                </app-card>
             </div>
             <div id="diamonds-stack">
                 <p>♦</p>
+                <app-card *ngFor="let card of suiteStack[2]"
+                          [classNum]="card.id" [id]="'visible'">
+                </app-card>
             </div>
             <div id="spades-stack">
                 <p>♣</p>
+                <app-card *ngFor="let card of suiteStack[3]"
+                          [classNum]="card.id" [id]="'visible'">
+                </app-card>
             </div>
         </div>
     </div>
@@ -24,49 +41,56 @@
             <app-card *ngFor="let card of cardRows[0]; let i = index"
                       [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
                       [style.position]="'absolute'"
-                      [style.top]="25 * i + 'px'">
+                      [style.top]="25 * i + 'px'"
+                      (click)="moveCardFromRow(card, 0)">
             </app-card>
         </div>
         <div id="row2" class="card-container">
             <app-card *ngFor ="let card of cardRows[1]; let i = index"
                       [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
                       [style.position]="'absolute'"
-                      [style.top]="25 * i + 'px'">
+                      [style.top]="25 * i + 'px'"
+                      (click)="moveCardFromRow(card, 1)">
             </app-card>
         </div>
         <div id="row3" class="card-container">
             <app-card *ngFor="let card of cardRows[2]; let i = index"
                       [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
                       [style.position]="'absolute'"
-                      [style.top]="25 * i + 'px'">
+                      [style.top]="25 * i + 'px'"
+                      (click)="moveCardFromRow(card, 2)">
             </app-card>
         </div>
         <div id="row4" class="card-container">
             <app-card *ngFor="let card of cardRows[3]; let i = index"
                       [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
                       [style.position]="'absolute'"
-                      [style.top]="25 * i + 'px'">
+                      [style.top]="25 * i + 'px'"
+                      (click)="moveCardFromRow(card, 3)">
             </app-card>
         </div>
         <div id="row5" class="card-container">
             <app-card *ngFor="let card of cardRows[4]; let i = index"
                       [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
                       [style.position]="'absolute'"
-                      [style.top]="25 * i + 'px'">
+                      [style.top]="25 * i + 'px'"
+                      (click)="moveCardFromRow(card, 4)">
             </app-card>
         </div>
         <div id="row6" class="card-container">
             <app-card *ngFor="let card of cardRows[5]; let i = index"
                       [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
                       [style.position]="'absolute'"
-                      [style.top]="25 * i + 'px'">
+                      [style.top]="25 * i + 'px'"
+                      (click)="moveCardFromRow(card, 5)">
             </app-card>
         </div>
         <div id="row7" class="card-container">
             <app-card *ngFor="let card of cardRows[6]; let i = index"
                       [classNum]="card.id" [id]="card.visible ? 'visible' : 'hidden'"
                       [style.position]="'absolute'"
-                      [style.top]="25 * i + 'px'">
+                      [style.top]="25 * i + 'px'"
+                      (click)="moveCardFromRow(card, 6)">
             </app-card>
         </div>
     </div>

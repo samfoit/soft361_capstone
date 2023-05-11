@@ -47,11 +47,11 @@ p {
     padding-top: 40%;
 }
 
-[id*="stack"] {
+#deck-cards, [id*="stack"] {
     display: grid;
 }
 
-[id*="stack"] * {
+#deck-cards *, [id*="stack"] * {
     grid-column: 1;
     grid-row: 1;
 }
