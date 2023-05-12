@@ -1,11 +1,15 @@
 ﻿<Properties StartupConfiguration="{9481DFF9-1E0D-4AC7-A04B-A0E6A89DDA02}|Default">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Project361/ClientApp/src/app/solitaire/solitaire.component.ts">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Project361/ClientApp/src/app/war-game/war-game.component.ts">
     <Files>
-      <File FileName="Project361/ClientApp/src/app/deck.ts" Line="18" Column="31" />
-      <File FileName="Project361/ClientApp/src/app/app.component.ts" Line="1" Column="1" />
-      <File FileName="Project361/ClientApp/src/app/solitaire/solitaire.component.ts" Line="23" Column="40" />
-      <File FileName="Project361/ClientApp/src/app/home/home.component.ts" Line="30" Column="39" />
+      <File FileName="Project361/ClientApp/src/app/solitaire/solitaire.component.ts" />
+      <File FileName="Project361/ClientApp/src/app/deck.ts" />
+      <File FileName="Project361/ClientApp/src/app/solitaire/solitaire.component.html" />
+      <File FileName="Project361/ClientApp/src/app/multiplayer/multiplayer.component.html" />
+      <File FileName="Project361/Data/ApplicationDbContext.cs" />
+      <File FileName="Project361/Data/PlayerContext.cs" />
+      <File FileName="Project361/Data/CardsContext.cs" />
+      <File FileName="Project361/ClientApp/src/app/war-game/war-game.component.ts" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,35 +17,16 @@
           <Node name="Project361" expanded="True">
             <Node name="Project361" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="ClientApp" expanded="True">
-                <Node name="src" expanded="True">
-                  <Node name="app" expanded="True">
-                    <Node name="card" expanded="True" />
-                    <Node name="home" expanded="True" />
-                    <Node name="models" expanded="True" />
-                    <Node name="services" expanded="True" />
-                    <Node name="solitaire" expanded="True">
-                      <Node name="solitaire.component.ts" selected="True" />
-                    </Node>
-                    <Node name="war-game" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="Controllers" expanded="True" />
-              <Node name="Data" expanded="True">
-                <Node name="Migrations" expanded="True" />
-              </Node>
-              <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Project361 PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
