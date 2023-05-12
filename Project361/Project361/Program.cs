@@ -13,6 +13,8 @@ builder.Services.AddDbContext<CardsContext>(dbContextOptionsBuilder =>
     dbContextOptionsBuilder.UseSqlite(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 builder.Services.AddDbContext<SolitaireContext>(dbContextOptionsBuilder =>
     dbContextOptionsBuilder.UseSqlite(builder.Configuration["ConnectionStrings:DefaultConnection"]));
+builder.Services.AddDbContext<PlayerContext>(dbContextOptionsBuilder =>
+    dbContextOptionsBuilder.UseSqlite(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

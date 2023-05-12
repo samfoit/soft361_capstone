@@ -1,35 +1,11 @@
 <div id="page">
-    <div class="cards-container">
-        <div class="player-container">
-            <div class="player-info">
-                <div class="score">0</div>
-                <div class="name">Sam</div>
-            </div>
-            <app-card [classNum]="1" [id]="'hidden'"></app-card>
-        </div>
-        <div class="player-container">
-            <div class="player-info">
-                <div class="score">0</div>
-                <div class="name">Aden</div>
-            </div>
-            <app-card [classNum]="1" [id]="'hidden'"></app-card>
-        </div>
-        <div class="player-container">
-            <div class="player-info">
-                <div class="score">0</div>
-                <div class="name">Pranav</div>
-            </div>
-            <app-card [classNum]="1" [id]="'hidden'"></app-card>
-        </div>
-        <div class="player-container">
-            <div class="player-info">
-                <div class="score">0</div>
-                <div class="name">Chris</div>
-            </div>
-            <app-card [classNum]="1" [id]="'hidden'"></app-card>
-        </div>
+    <div class="cards-container" *ngIf="players != undefined">
+        <app-player *ngFor="let player of players; let i = index"
+                    [name]="player.name" [score]="player.score"
+                    [card]="deck[i].id" [visible]="deck[i].visible ? 'visible' : 'hidden'">
+        </app-player>
     </div>
     <div>
-        <button type="button" (click)="onPlayButtonClicked()"class="btn btn-warning btn-lg">Play</button>
+        <button type="button" (click)="onPlayButtonClicked()"class="btn btn-warning btn-lg" *ngIf="!showingCards">Play</button>
     </div>
 </div>

@@ -32,6 +32,7 @@ public class CardsContext : DbContext
         modelBuilder.Entity<Card>().HasData(cardsToSeed);
     }
 
+    // abstract these two methods into a static C# class
     private int GetCardRank(int id)
     {
         int result = id % 13;

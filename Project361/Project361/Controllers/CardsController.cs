@@ -18,7 +18,7 @@ public class CardsController : Controller
 		_context = context;
 	}
 
-	// GET: api/cards or api/card?
+	// GET: api/cards
 	[HttpGet]
 	public IEnumerable<Card> GetCards()
 	{

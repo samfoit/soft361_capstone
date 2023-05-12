@@ -8,27 +8,5 @@ import { SharedService } from '../services/shared.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  public cardData;
-
-  constructor(public service: SharedService) {}
-
-  ngOnInit(): void {
-    this.getDeck();
-  }
-
-  getDeck() {
-    this.service.getDeck()
-      .subscribe(response => {
-        this.setCardData(response);
-      });
-  }
-
-  setCardData(data: any) {
-    this.cardData = data;
-  }
-
-  createSolitaireGame() {
-    
-  }
+export class HomeComponent {
 }

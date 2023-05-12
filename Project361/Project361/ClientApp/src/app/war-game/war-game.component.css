@@ -15,42 +15,11 @@
     grid-row-start: auto;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-}
-
-.player-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.player-info {
-    display: flex;
-    gap: 3px;
-    background-color: white;
-    border-radius: 4px;
-    margin: 10px;
-}
-
-.score {
-  background-color: rgb(13,110,253);
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  text-align: center;
-  color: white;
-  font-size: 1.5rem;
-  padding: 5px;
-}
-
-.name {
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    padding-right: 5px;
-    font-size: 1rem;
+    gap: 1em;
 }
 
 button {
+  margin-top: 50px;
   padding-right: 30px;
   padding-left: 30px;
 }

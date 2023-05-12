@@ -13,6 +13,7 @@ import { CardComponent } from './card/card.component';
 import { SolitaireComponent } from './solitaire/solitaire.component';
 import { MultiplayerComponent } from './multiplayer/multiplayer.component';
 import { WarGameComponent } from './war-game/war-game.component';
+import { PlayerComponent } from './player/player.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { WarGameComponent } from './war-game/war-game.component';
     SolitaireComponent,
     MultiplayerComponent,
     WarGameComponent,
+    PlayerComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

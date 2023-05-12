@@ -79,8 +79,8 @@ export class SolitaireComponent implements OnInit {
       card.visible = true;
       this.deck.pop();
     } else {
-      for (const card of this.drawPile) {
-        this.deck.push(card);
+      for (let i = this.drawPile.length - 1; i >= 0; i--) {
+        this.deck.push(this.drawPile[i]);
       }
 
       this.drawPile = [];
@@ -103,6 +103,7 @@ export class SolitaireComponent implements OnInit {
     const cardColor = this.cardSuiteIsBlack(card.suite);
 
     for (const row of this.cardRows) {
+      // if we find an empty row and the topCard is a King
       if (row.length == 0 && card.rank == 13) {
         let foundCard = false;
         let cardsPushed = 0;
@@ -126,6 +127,7 @@ export class SolitaireComponent implements OnInit {
         return;
       }
 
+      // otherwise do a normal card stack placement
       if (row.length == 0) { continue; }
       const lastCard = row[row.length - 1];
       const lastCardColor = this.cardSuiteIsBlack(lastCard.suite);
@@ -168,6 +170,7 @@ export class SolitaireComponent implements OnInit {
       if (row.length == 0 && card.rank == 13) {
         row.push(card);
         this.revealCard(rowNum);
+        return;
       }
 
       if (row.length == 0) { continue; }

@@ -37,12 +37,14 @@
     <None Remove="ClientApp\src\app\models\" />
     <None Remove="ClientApp\src\app\services\" />
     <None Remove="Data\Migrations\" />
+    <None Remove="ClientApp\src\app\constants\" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ClientApp\src\app\models\" />
     <Folder Include="ClientApp\src\app\services\" />
     <Folder Include="Data\Migrations\" />
+    <Folder Include="ClientApp\src\app\constants\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\OidcConfigurationController.cs" />

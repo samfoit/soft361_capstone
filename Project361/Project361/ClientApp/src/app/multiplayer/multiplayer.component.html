@@ -1,17 +1,19 @@
 <div id="page">
     <h1>War</h1>
-    <form [formGroup]="multiplayerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="multiplayerForm" (ngSubmit)="onSubmit()" *ngIf="!displayPlayButton">
         <div formArrayName="players" class="input-holder">
             <div *ngFor="let child of multiplayerForm!.get('players')['controls']; let i = index"
                  formGroupName="{{i}}" class="container">
                 Player {{i + 1}}
-                <input type="text" placeholder="username" class="form-control" formControlName="username" required minlength="1"/>
+                <input type="text" placeholder="username" class="form-control" formControlName="username" required minlength="1" />
             </div>
             <div class="form-buttons">
                 <a (click)="removePlayer()" class="btn btn-sm btn-danger">-</a>
                 <a (click)="addPlayer()" class="btn btn-sm btn-success">+</a>
             </div>
+            <button class="btn btn-warning" type="submit" *ngIf="!displayPlayButton">Submit</button>
         </div>
-        <button class="btn btn-warning btn-lg" type="submit">Play</button>
     </form>
+    <br />
+    <a *ngIf="displayPlayButton" class="btn btn-warning btn-lg" (click)="warLink()">Play</a>
 </div>
