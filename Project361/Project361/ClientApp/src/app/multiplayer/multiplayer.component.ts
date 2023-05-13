@@ -1,9 +1,16 @@
-import { HttpResponse } from '@angular/common/http';
+import { AbstractControl, ValidatorFn, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlayerDTO } from '../models/player.model';
 import { SharedService } from '../services/shared.service';
+
+// Custom validator to blacklist certain special characters.
+export function forbiddenCharactersValidator(forbiddenChars: RegExp): ValidatorFn {
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    const forbidden = forbiddenChars.test(control.value);
+    return forbidden ? { 'forbiddenCharacters': { value: control.value } } : null;
+  };
+}
 
 @Component({
   selector: 'app-multiplayer',
@@ -12,8 +19,7 @@ import { SharedService } from '../services/shared.service';
 })
 export class MultiplayerComponent implements OnInit {
 
-  public multiplayerForm: FormGroup = new FormGroup({
-  });
+  public multiplayerForm: FormGroup = new FormGroup({});
   players?: number;
 
   public newGameId;
@@ -32,7 +38,7 @@ export class MultiplayerComponent implements OnInit {
     this.multiplayerForm = new FormGroup({
       players: new FormArray([
         new FormGroup({
-          username: new FormControl("", [Validators.required, Validators.minLength(1)])
+          username: new FormControl("", [Validators.required, Validators.minLength(1), forbiddenCharactersValidator(/[\0\x08\x09\x1a\n\r"'\\\%]/g)])
         })
       ])
     });
@@ -44,7 +50,7 @@ export class MultiplayerComponent implements OnInit {
     if (this.players < 8) {
       this.players++;
       control.push(new FormGroup({
-        username: new FormControl("", [Validators.required, Validators.minLength(1)]),
+        username: new FormControl("", [Validators.required, Validators.minLength(1), forbiddenCharactersValidator(/[\0\x08\x09\x1a\n\r"'\\\%]/g)]),
       }));
     }
   }
@@ -71,10 +77,9 @@ export class MultiplayerComponent implements OnInit {
         let newPlayer = { gameId: this.newGameId, name: player.username, score: 0 } as PlayerDTO;
         this.postPlayer(newPlayer);
       }
-      // this.multiplayerForm.reset();
       this.displayPlayButton = true;
     } else {
-      alert("Input not valid.\nAre you missing a name?");
+      alert("Input not valid.\nAre you missing a name or using forbidden characters?");
     }
   }
 
@@ -87,5 +92,4 @@ export class MultiplayerComponent implements OnInit {
       console.log(response);
     });
   }
-
 }
