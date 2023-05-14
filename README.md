@@ -1,6 +1,7 @@
 # Soft361_capstone
   MUST HAVE NODE.JS & NPM INSTALLED TO RUN THIS PROJECT!
-  Website for the card games War and Solitaire. Tracks score with a database(?).
+  
+  Website for the card games War and Solitaire.
   
 # Game rules
 ## War
