@@ -24,6 +24,6 @@
   
   Back End: C#.NET
   
-  Database: MySQL
+  Database: SQLite
   
   Framework: MVC
