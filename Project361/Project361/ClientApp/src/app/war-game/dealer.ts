@@ -9,7 +9,7 @@ import { Player } from '../models/player-dto.model';
   styleUrls: ['./war-game.component.css']
 })
 
-export class deck {
+export class Dealer {
 
   shuffle(players, deck) {
     for (let i = 0; i < players.length; i++) {

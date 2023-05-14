@@ -5,7 +5,7 @@
             <div id="deck-cards">
                 <app-card *ngFor="let card of drawPile; let i = index"
                           [classNum]="card.id" [id]="i == (drawPile.length - 1) ? 'visible' : 'hidden'"
-                          (click)="placeCard(card, -1)">
+                          (click)="moveCardFromDraw(card, -1)">
                 </app-card>
             </div>
         </div>

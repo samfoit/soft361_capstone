@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { deck } from './deck';
+import { Dealer } from './dealer';
 import { Card } from '../models/card.model';
 import { Player } from '../models/player-dto.model';
 

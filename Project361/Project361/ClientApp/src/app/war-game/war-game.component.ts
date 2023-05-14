@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../services/shared.service';
 import { Card } from '../models/card.model';
 import { Player } from '../models/player-dto.model';
-import * as deck from './deck';
+import * as deck from './Dealer';
 
 @Component({
   selector: 'app-war-game',
@@ -22,7 +22,7 @@ export class WarGameComponent implements OnInit {
     this.startGame();
   }
   onPlayButtonClicked() {
-    let d = new deck.deck();
+    let d = new deck.Dealer();
     this.deck = d.shuffle(this.players, this.deck);
     this.showingCards = true;
     this.deck = d.flipCards(this.players, this.deck);
